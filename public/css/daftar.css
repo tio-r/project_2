@@ -1,0 +1,193 @@
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* agar tidak scroll */
+  }
+  
+  /* Container utama */
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* sesuaikan tinggi agar tidak keluar layar */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+  
+  /* Bagian kiri gambar */
+  .left-side {
+    flex: 1;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240401/pngtree-blur-pharmacist-taking-medicine-from-shelf-in-pharmacy-image_15649362.jpg');
+    background-size: cover;
+    background-position: left;
+  }
+  
+  /* Bagian kanan: konten */
+  .right-side {
+    flex: 1;
+    background: linear-gradient(to bottom, #2D336B, #1F3B78);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    /* agar elemen tidak terlalu rapi, beri jarak antar bagian */
+  }
+  
+  .header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: Left;
+    color: #fff;
+  }
+  
+  /* Posisi logo dan teks di bagian atas */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-right: 20px;
+  }
+  
+  .logo-img {
+    width: 80px; /* ubah sesuai kebutuhan */
+    height: auto;
+    display: block;
+  }
+  
+  .header-text h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .header-text h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Card form, disesuaikan agar muat di bagian kanan */
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: 520px;
+    margin-bottom: 400px;
+    max-width: 400px; /* agar tidak terlalu lebar, tetap proporsional */
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 0px; /* beri jarak dari atas */
+  }
+  
+  /* Judul form */
+  .card-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #2D336B;
+    border-bottom: 3px solid #2D336B; /* garis bawah */
+    padding-bottom: 10px; /* jarak antara teks dan garis */
+  }
+  
+/* Form group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Label */
+  label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    height: 20px; /* buat tinggi tetap */
+    line-height: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    height: 40px; /* tinggi tetap */
+    box-sizing: border-box;
+    margin-top: 2px; /* jarak antara label dan input tetap */
+    margin-bottom: -15px;
+  }
+
+  .error-message {
+    height: 20px; /* tinggi tetap untuk pesan error */
+    font-size: 12px;
+    color: red;
+    margin-top: -2px;
+    text-align: left; /* teks rata kiri */
+    align-items: center; /* vertikal tengah */
+    padding-left: 5px; /* jarak dari kiri agar tidak terlalu mepet */
+  }
+  
+  /* Tombol */
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #1F3B78;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #163365;
+  }
+  
+  /* Link login */
+  .login-link {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .login-link a {
+    color: #1F3B78;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsif kecil */
+  @media(max-width: 768px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+    .left-side {
+      display: none;
+    }
+    .right-side {
+      flex: none;
+      width: 100%;
+    }
+  }
