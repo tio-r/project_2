@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string ('nama')->unique();
             $table->string ('email')->unique();
             $table->string ('password');
-            $table->integer ('nomor_hp');
+            $table->string ('nomor_hp');
             $table->timestamp ('tanggal_daftar');
         });
     }

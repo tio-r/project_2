@@ -8,10 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <!-- Bagian kiri: gambar background -->
     <div class="left-side"></div>
-    
-    <!-- Bagian kanan: isi -->
     <div class="right-side">
         <div class="header">
             <div class="logo-container">
@@ -21,34 +18,47 @@
                     <h1>Apotek Naura Farma</h1>
                 </div>
             </div>
-        <!-- Card box untuk form -->
+        </div>
         <div class="card">
             <h1 class="card-title">Daftar</h1>
-            <form id="registerForm">
+
+            @if(session('success'))
+                <p style="color: green;">{{ session('success') }}</p>
+            @endif
+
+            <form method="POST" action="{{ route('daftar') }}">
+                @csrf
                 <div class="form-group">
                     <label for="username">Nama Pengguna</label>
-                    <input type="text" id="username" name="username" required />
-                    <span class="error-message" id="usernameError"></span>
+                    <input type="text" id="username" name="username" required value="{{ old('username') }}" />
+                    @error('username')
+                        <span style="color:red;">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required />
-                    <span class="error-message" id="emailError"></span>
+                    <input type="email" id="email" name="email" required value="{{ old('email') }}" />
+                    @error('email')
+                        <span style="color:red;">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="phone">Nomor Telepon</label>
-                    <input type="tel" id="phone" name="phone" required />
-                    <span class="error-message" id="phoneError"></span>
+                    <input type="tel" id="phone" name="phone" required value="{{ old('phone') }}" />
+                    @error('phone')
+                        <span style="color:red;">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="password">Kata Sandi</label>
                     <input type="password" id="password" name="password" required />
-                    <span class="error-message" id="passwordError"></span>
+                    @error('password')
+                        <span style="color:red;">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="confirmPassword">Konfirmasi Sandi</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required />
-                    <span class="error-message" id="confirmPasswordError"></span>
+                    <input type="password" id="confirmPassword" name="password_confirmation" required />
                 </div>
                 <button type="submit" class="submit-btn">Daftar</button>
             </form>
@@ -58,6 +68,5 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('js/daftar.js') }}"></script>
 </body>
 </html>

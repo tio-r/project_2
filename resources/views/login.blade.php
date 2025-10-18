@@ -21,10 +21,11 @@
         <!-- Card box untuk form -->
         <div class="card">
             <h1 class="card-title">Login</h1>
-            <form id="loginForm">
+            <form id="loginForm" method="POST" action="{{ url('/login') }}">
+                @csrf
                 <div class="form-group">
                     <label for="username">Nama Pengguna</label>
-                    <input type="text" id="username" name="username" required />
+                    <input type="text" id="username" name="username" required value="{{ old('username') }}" />
                     <span class="error-message" id="usernameError"></span>
                 </div>
                 <div class="form-group">
@@ -32,6 +33,9 @@
                     <input type="password" id="password" name="password" required />
                     <span class="error-message" id="passwordError"></span>
                 </div>
+                @if(session('login_error'))
+                    <div style="color: red;">{{ session('login_error') }}</div>
+                @endif
                 <button type="submit" class="submit-btn">Login</button>
             </form>
             <div class="daftar-link">
@@ -44,6 +48,5 @@
     <div class="right-side">
         
     </div>
-<script src="{{ asset('js/login.js') }}"></script>
 </body>
 </html>

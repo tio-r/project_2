@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +19,11 @@ Route::get('/', function () {
     return view ('welcome');
 });
 
-Route::get('/daftar', function () {
-    return view('daftar');
-});
+Route::get('/daftar', [UserController::class, 'showDaftarForm'])->name('daftar.form');
+Route::post('/daftar', [UserController::class, 'daftar'])->name('daftar');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
