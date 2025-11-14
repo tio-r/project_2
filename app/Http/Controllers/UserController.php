@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function showDaftarForm()
     {
-        return view('daftar');
+        return view('user.daftar');
     }
 
     public function daftar(Request $request)

@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('login');
+        return view('user.login');
     }
 
     public function login(Request $request)
@@ -39,13 +39,14 @@ class LoginController extends Controller
             'id_login' => $newIdLogin,
             'id_user' => $user->id_user,
             'nama' => $user->nama,
-            'waktu_login' => now(),
+            'waktu_login' => now()
         ]);
-
+        
         return redirect()->intended('/dashboard');
     } else {
         // Login gagal
         return back()->with('login_error', 'Username atau password salah')->withInput();
     }
 }
+
 }

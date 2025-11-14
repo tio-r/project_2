@@ -126,6 +126,11 @@ body {
     margin-right: 4px;
 }
 
+.btn{
+    color: white;
+    text-decoration: none;
+}
+
 /* Teks tanggal */
 .schedule-date {
     font-weight: bold;
@@ -248,7 +253,7 @@ body {
     background-color: #fff;
     padding: 15px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .articles-section h3 {
@@ -257,7 +262,7 @@ body {
 
 .articles-container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     gap: 15px;
     padding-bottom: 10px;
 }
