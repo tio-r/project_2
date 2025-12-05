@@ -8,12 +8,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+<!-- Loading overlay -->
+<div id="loading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <br>
+    <p>Memuat...</p>
+</div>
 
 <div class="header">
     <i class="fa-solid fa-arrow-left" id="backIcon" style="cursor:pointer;" onclick="window.location='/dashboard'"></i>
     <h1>Etalase Obat</h1>
     <div class="ikonKanan">
-    <i class="fa-solid fa-cart-plus"></i>
+    <i class="fa-solid fa-cart-plus" onclick="window.location='/keranjang'"></i>
     <i class="fas fa-home" style="cursor:pointer;" onclick="window.location='/dashboard'"></i>
     </div>
 </div>
@@ -106,5 +112,6 @@
     </div>
 </div>
 </div>
+<script src="{{ asset('js/loading.js') }}" defer></script>
 </body>
 </html>

@@ -8,16 +8,13 @@ use App\Http\Controllers\KalenderController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\AlamatController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
 Route::get('/', function () {
@@ -25,10 +22,10 @@ Route::get('/', function () {
 });
 
 Route::get('/daftar', [UserController::class, 'showDaftarForm'])->name('daftar.form');
-Route::post('/daftar', [UserController::class, 'user.daftar'])->name('daftar');
+Route::post('/daftar', [UserController::class, 'daftar'])->name('daftar');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
-Route::post('/login', [LoginController::class, 'user.login'])->name('login.perform');
+Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');
@@ -43,10 +40,23 @@ Route::get('/send-event', function(){
 });  
 
 Route::get('/etalase-obat', function () {
-    return view ('user.etalaseobat');
+    return view ('user.etalase-obat');
 });
 
-Route::get('/obat', [ObatController::class, 'index']);
+Route::get('/obat', [ObatController::class, 'index'])->name('obat.index');
+
+Route::get('/detail', [ObatController::class, 'detail'])->name('obat.detail');
+
+Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang');
+Route::post('/add-to-cart', [KeranjangController::class, 'addToCart'])->name('add.to.cart');
+Route::post('/update-cart', [KeranjangController::class, 'updateCart'])->name('update.cart');
+Route::post('/update-note', [KeranjangController::class, 'updateNote'])->name('update.note');
+Route::post('/remove-from-cart', [KeranjangController::class, 'removeFromCart'])->name('remove.from.cart');
+Route::get('/clear-cart', [KeranjangController::class, 'clearCart'])->name('clear.cart');
+
+Route::get('/alamat', [AlamatController::class, 'index'])->name('user.alamat');
+Route::post('/alamat/simpan', [AlamatController::class, 'simpan'])->name('user.simpan');
+Route::get('/alamat/cari', [AlamatController::class, 'geocode'])->name('user.geocode');
 
 Route::get('/daftar-admin', [AdminController::class, 'showForm'])->name('admin.daftar');
 
@@ -66,6 +76,6 @@ Route::get('/dashboard-admin', function () {
 
 Route::get('/user-admin', function () {
     return view('admin.user', [
-        'users' => DB::table('user')->get() // ambil semua data dari tabel user
+        'users' => DB::table('user')->get()
     ]);
 });

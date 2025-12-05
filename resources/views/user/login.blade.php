@@ -7,6 +7,13 @@
 <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
 </head>
 <body>
+<!-- Loading overlay -->
+<div id="loading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <br>
+    <p>Memuat...</p>
+</div>
+
 <div class="container">
     <!-- Bagian kiri: gambar background -->
     <div class="left-side">
@@ -48,5 +55,6 @@
     <div class="right-side">
         
     </div>
+    <script src="{{ asset('js/loading.js') }}" defer></script>
 </body>
 </html>

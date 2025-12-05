@@ -7,6 +7,13 @@
 <link rel="stylesheet" href="{{ asset('css/daftar.css') }}" />
 </head>
 <body>
+    <!-- Loading overlay -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <br>
+        <p>Memuat...</p>
+    </div>
+    
 <div class="container">
     <div class="left-side"></div>
     <div class="right-side">
@@ -68,5 +75,6 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/loading.js') }}" defer></script>
 </body>
 </html>

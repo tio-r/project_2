@@ -1,0 +1,651 @@
+/* resources/css/keranjang.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 80px;
+    color: #333;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #2D336B;
+    height: 80px;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    margin-left: 20px;
+    font-size: 24px;
+    flex: 1;
+}
+
+#backIcon {
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.ikonKanan {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.ikonKanan i {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.ikonKanan i:hover {
+    transform: scale(1.1);
+}
+
+/* Container */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Address Alert */
+.address-alert {
+    background: linear-gradient(135deg, #dff9ff, #dff9ff);
+    border: 1px solid #dff9ff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.alert-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.alert-content i {
+    color: #2D336B;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.alert-text p {
+    color: #2D336B;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.btn-add-address {
+    width: 100%;
+    background: #2D336B;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-add-address:hover {
+    background: #1e255a;
+}
+
+/* Select All */
+.select-all {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background: #2D336B;
+    border-color: #2D336B;
+}
+
+.checkbox-container input:checked + .checkmark:after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Cart Items */
+.cart-items {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    padding: 15px;
+}
+
+.item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Gambar Produk */
+.item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid #e9ecef;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+    min-width: 0; /* Untuk mencegah overflow */
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.item-stock {
+    font-size: 12px;
+    color: #e74c3c;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Price Section - sekarang di dalam item-info */
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.current-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.original-price {
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.discount {
+    font-size: 12px;
+    background: #e74c3c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Quantity Control - dipindah ke kanan atas */
+.quantity-control {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #e9ecef;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.qty-btn:hover {
+    background: #dee2e6;
+}
+
+.quantity {
+    font-weight: 600;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Item Note */
+.item-note {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.note-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.note-header i {
+    font-size: 14px;
+}
+
+.note-textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 12px;
+    resize: vertical;
+    min-height: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.note-textarea:focus {
+    outline: none;
+    border-color: #2D336B;
+}
+
+/* Item Actions */
+.item-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-delete {
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-delete:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: #ecf0f1;
+    margin: 10px -15px 0 -15px;
+}
+
+/* Checkout Section - Layout Baru */
+.checkout-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.checkout-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.total-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.checkout-right {
+    flex-shrink: 0;
+}
+
+.btn-checkout {
+    background: #2D336B;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.btn-checkout:hover {
+    background: #1e255a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 51, 107, 0.3);
+}
+
+.btn-checkout:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .item-header {
+        gap: 10px;
+    }
+    
+    .item-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .quantity-control {
+        position: relative;
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+    
+    .item-name {
+        font-size: 13px;
+    }
+    
+    .price-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .checkout-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .checkout-left {
+        align-items: center;
+    }
+    
+    .btn-checkout {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .total-amount {
+        font-size: 18px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cart-item {
+    animation: fadeIn 0.3s ease-out;
+}
+.loading-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.3s;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+.saved-address {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.address-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.address-header i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.address-header h3 {
+    flex: 1;
+    margin: 0;
+    font-size: 18px;
+}
+
+.btn-change-address {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+}
+
+.btn-change-address:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.address-details p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.address-details strong {
+    font-size: 16px;
+}
+
+.coordinates {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Button checkout disabled style */
+.btn-checkout:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Saved Address Styles */
+.saved-address {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.address-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.address-header i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.address-header h3 {
+    flex: 1;
+    margin: 0;
+    font-size: 18px;
+}
+
+.btn-change-address {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+}
+
+.btn-change-address:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.address-details p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.address-details strong {
+    font-size: 16px;
+}
+
+.coordinates {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Jika ada alamat tersimpan, sembunyikan alert alamat */
+.saved-address + .address-alert {
+    display: none;
+}

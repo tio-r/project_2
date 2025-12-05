@@ -10,6 +10,13 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
 </head>
 <body>
+    <!-- Loading overlay -->
+<div id="loading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <br>
+    <p>Memuat...</p>
+</div>
+
     <!-- Navbar atas -->
     <header class="navbar-top">
         <div class="logo">
@@ -154,5 +161,6 @@
             <span>Pengaturan</span>
         </div>
     </footer>
+    <script src="{{ asset('js/loading.js') }}" defer></script>
 </body>
 </html>

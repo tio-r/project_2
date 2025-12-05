@@ -8,6 +8,6 @@ class KalenderController extends Controller
 {
     public function showKalender()
     {
-        return view('user.Kalender'); // Pastikan file blade bernama kalender.blade.php
+        return view('user.kalender'); // Pastikan file blade bernama kalender.blade.php
     }
 }

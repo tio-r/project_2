@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+    <!-- Loading overlay -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <br>
+        <p>Memuat...</p>
+    </div>
 
 <div class="header">
     <i class="fa-solid fa-arrow-left" id="backIcon" style="cursor:pointer; font-size:24px; margin-right:10px;"></i>
@@ -46,6 +52,7 @@
     <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
 </div>
 
+<script src="{{ asset('js/loading.js') }}" defer></script>
 <script>
       document.getElementById("backIcon").addEventListener("click", () => {
          window.location.href = "/dashboard";

@@ -1,0 +1,523 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            position: fixed;
+            background-color: #2D336B;
+            height: 80px;
+            width: 100%;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        /* Judul di header */
+        .header h1 {
+            margin-left: 20px;
+            font-size: 28px;
+        }
+
+        #backIcon{
+            cursor:pointer; 
+            font-size:30px; 
+            margin-right:10px;
+        }
+        
+        .ikonKanan{
+            margin-left: auto;
+            font-size: 30px;
+        }
+        
+        .ikonKanan i{
+           margin-right: 15px;
+        }
+        
+        .search-container {
+            margin-top: 100px;
+            margin-left: 120px;
+            display: flex;
+            gap: 10px;
+            width: 80%;
+        }
+        
+        .search-box {
+            flex: 1;
+            position: relative;
+        }
+        
+        #searchInput {
+            width: 100%;
+            padding: 14px 20px;
+            padding-left: 50px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        #searchInput:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+        
+        .search-btn {
+            padding: 0 25px;
+            background: #2D336B;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .search-btn:hover {
+            background: #2b2ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+        }
+        
+        /* Main Content - Map Card di Tengah */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px 20px;
+            overflow-y: auto;
+        }
+        
+        .map-card-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        /* Map Card */
+        .map-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+            height: 500px;
+            position: relative;
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Map Controls */
+        .map-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .control-btn {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c3e50;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+        
+        .control-btn:hover {
+            background: #2D336B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Layer Control */
+        .layer-control {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .layer-btn {
+            padding: 10px 15px;
+            background: #2D336B;
+            color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .layer-btn.active {
+            background: #2D336B;
+            color: white;
+            border-color: #2D336B;
+        }
+        
+        .layer-btn:hover {
+            background: #2b2ed8;
+        }
+        
+        /* Location Info Card (di bawah map card) */
+        .location-info-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .info-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        
+        .info-header i {
+            color: #2D336B;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .info-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #2D336B;
+        }
+        
+        .info-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .info-title i {
+            color: #2D336B;
+        }
+        
+        .coordinates-display {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .coord-input {
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            background: white;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .coord-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .address-display {
+            min-height: 120px;
+            padding: 20px;
+            background: white;
+            border: 2px dashed #bdc3c7;
+            border-radius: 8px;
+            line-height: 1.6;
+            font-size: 15px;
+            overflow-y: auto;
+        }
+        
+        .address-display strong {
+            color: #2c3e50;
+        }
+        
+        /* Action Buttons (di bawah alamat lengkap) */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .primary-btn {
+            padding: 18px;
+            background: #2D336B;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+        
+        .secondary-btn {
+            padding: 18px;
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .secondary-btn:hover {
+            background: #e9ecef;
+            border-color: #3498db;
+        }
+        
+        /* Loading Indicator */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                gap: 10px;
+            }
+            
+            .logo-title h1 {
+                font-size: 20px;
+            }
+            
+            .search-container {
+                flex-direction: column;
+            }
+            
+            .search-btn {
+                padding: 12px;
+                justify-content: center;
+            }
+            
+            .map-card {
+                height: 400px;
+            }
+            
+            .map-controls {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            
+            .layer-control {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px;
+                flex-direction: column;
+            }
+            
+            .layer-btn {
+                padding: 8px 12px;
+                font-size: 13px;
+                justify-content: center;
+            }
+            
+            .location-info-card {
+                padding: 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .coordinates-display {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .primary-btn, .secondary-btn {
+                padding: 16px;
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .map-card {
+                height: 350px;
+            }
+            
+            .location-info-card {
+                padding: 15px;
+            }
+            
+            .info-header {
+                font-size: 18px;
+            }
+            
+            .info-title {
+                font-size: 16px;
+            }
+        }
+        
+        /* Custom Marker */
+        .custom-marker {
+            background: #2D336B;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        /* Popup Styling */
+        .leaflet-popup-content {
+            font-size: 14px;
+            padding: 10px;
+        }
+        
+        .leaflet-popup-content strong {
+            color: #2c3e50;
+        }
+
+        .loading-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.3s;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
