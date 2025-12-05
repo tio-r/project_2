@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #2D336B;
+}
+
+/* Container navigasi */
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+button {
+    padding: 8px 16px;
+    background-color: #2D336B;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #1a237e;
+}
+
+/* Calendar styles */
+.month-block {
+    background-color: #2D336B; /* Warna dasar kalender */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+.month-block h2 {
+    text-align: center;
+    color: #fff;
+}
+table.month-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    background-color: #2D336B;
+    color: #fff;
+    padding: 4px;
+}
+td {
+    border: 1px solid #444;
+    width: 14.28%;
+    height: 110px;
+    vertical-align: top;
+    padding: 2px;
+    font-size: 12px;
+    background-color: #fff; /* Kolom tanggal berwarna putih */
+    position: relative;
+}
+/* Teks angka dan event berwarna biru */
+.date {
+    font-weight: bold;
+    color: #2D336B; /* Biru */
+    font-size: 24px;
+    text-align: center;
+    margin-top: 4px;
+}
+.event {
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 2px;
+    font-size: 12px;
+    background-color: #2D336B;
+    padding: 2px 6px;
+    display: inline-block;
+}
+/* Form input */
+.event-form {
+    margin-top: 4px;
+}
+input[type="text"] {
+    width: calc(70% - 8px);
+    padding: 2px 4px;
+    border: none;
+    border-radius: 4px;
+}
+button.submit-btn {
+    padding: 2px 6px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button.submit-btn:hover {
+    background-color: #1565c0;
+}

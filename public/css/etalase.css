@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    width: 100%;
+}
+
+/* Header tetap 100%, tinggi 60px sesuai keinginan */
+.header {
+    position: fixed;
+    background-color: #2D336B;
+    height: 80px;
+    width: 100%;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Judul di header */
+.header h1 {
+    margin-left: 20px;
+    font-size: 28px;
+}
+
+#backIcon{
+    cursor:pointer; 
+    font-size:30px; 
+    margin-right:10px;
+}
+
+.ikonKanan{
+    margin-left: auto;
+    font-size: 30px;
+}
+
+.ikonKanan i{
+   margin-right: 15px;
+}
+
+.cards-scroll{
+    overflow-y: auto;
+}
+
+.cards-container {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* Kartu individual */
+.custom-card {
+    background-color: #2D336B;
+    color: #f4f4f4;
+    border-radius: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 380px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Untuk menyeimbangkan isi di tengah */
+    box-sizing: border-box; /* Untuk padding dan border dihitung dalam sizing */
+}
+
+/* Efek hover */
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Ikon atau gambar */
+.icon-container img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+/* Judul kategori */
+.card-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center;
+}

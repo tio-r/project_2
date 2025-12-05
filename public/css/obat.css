@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding-top: 80px;
+    background-color: #f4f4f4;
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0; /* Pastikan mentok di atas */
+    background-color: #2D336B;
+    height: 80px;
+    width: 100%;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    box-sizing: border-box; /* Pastikan padding dihitung dalam height */
+}
+
+/* Judul di header */
+.header h1 {
+    margin-left: 20px;
+    font-size: 28px;
+}
+
+#backIcon{
+    cursor:pointer; 
+    font-size:30px; 
+    margin-right:10px;
+}
+
+.ikonKanan{
+    margin-left: auto;
+    font-size: 30px;
+}
+
+.ikonKanan i{
+   margin-right: 15px;
+}
+
+.obat-list {
+    padding: 20px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 kolom */
+    gap: 16px; /* jarak antar kartu */
+  }
+
+.card {
+    background-color: #2D336B;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 400px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-image {
+    width: 90%;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1px;
+}
+
+.obat-name {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 4px 0; /* ubah dari 10px ke 4px */
+    color: #f4f4f4;
+}
+
+.price {
+    font-weight: bold;
+    color: #fafafa;
+    margin-bottom: 4px; /* ubah dari 8px ke 4px */
+}
+
+.rating {
+    font-size: 0.9em;
+    color: #fafafa;
+}
+
+.rating-stok {
+    font-size: 0.9em;
+    color: #fafafa;
+}
+
+.rating i {
+    font-size: 1.1em;
+    color: #ffee00;
+}

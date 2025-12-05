@@ -1,0 +1,238 @@
+/* Tambahkan global box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    width: 100%;
+}
+
+/* Header tetap 100%, tinggi 60px sesuai keinginan */
+.header {
+    background-color: #2D336B;
+    height: 60px;
+    width: 100%;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Judul di header */
+.header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Profile section */
+.profile {
+    background-color: #2D336B;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+    width: 100%;
+    color: #fff;
+}
+
+.profile .teks {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Foto profil */
+.profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.tanggal{
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    margin: 10px 0; 
+}
+
+.teks{
+    color: #fff;
+    background-color: #2D336B;
+    padding: 5px 15px; 
+    border-radius: 25px; 
+    font-weight: bold;
+}
+
+.chat-box {
+    background-color: white;
+    margin: 20px auto; /* otomatis tengah */
+    padding: 10px;
+    border-radius: 10px;
+    height: 400px;
+    width: calc(100% - 40px); 
+    max-width: 100%; 
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+.message {
+    max-width: 100%;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    padding-right: 50px; 
+    border-radius: 10px;
+    position: relative; 
+    display: inline-block;
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.message-container.user {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; 
+    margin-bottom: 10px;
+}
+
+.message-container.user .time {
+    order: 1;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-right: 8px;
+    margin-left: auto;
+    align-self: center; 
+}
+
+.message.user {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #555;
+    border-top-right-radius: 0;
+    padding: 8px;
+    padding-right: 40px;
+    max-width: 60%;
+    order: 2;
+    margin-left: 0px;
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+/* Ikon read di kanan pesan user */
+.read-icon {
+    margin-left: 20px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* sesuaikan ukuran gambar */
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Container pesan pharmacist */
+.message-container.pharmacist {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* posisi pesan di kiri */
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Pesan dari pharmacist */
+.message.pharmacist {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #555;
+    border-top-left-radius: 0;
+    padding: 8px;
+    max-width: 60%;
+    position: relative;
+}
+
+/* Waktu dari pharmacist di samping kanan pesan */
+.message-container.pharmacist .time {
+    margin-left: 8px;
+    order: 2;
+    margin-bottom: 10px;
+    align-self: flex-end; /* agar berada di atas message */
+    font-size: 15px; /* ukuran font waktu */
+    white-space: nowrap;
+}
+
+/* Input area tetap di bawah */
+.input-area {
+    display: flex;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 8px;
+}
+
+  .input-container {
+    position: relative;
+    flex: 1;
+  }
+
+  #message-input {
+    width: 100%;
+    padding: 8px 30px 8px 8px; /* padding kanan untuk ruang ikon */
+    box-sizing: border-box;
+  }
+
+  /* ikon sisip di ujung kanan input */
+  .icon-sisip {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer; /* kursor pointer saat hover */
+    color: #888; /* warna ikon */
+  }
+
+ /* input file tersembunyi */
+ #file-input {
+    display: none;
+  }
+
+/* Input teks */
+input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%; /* pastikan penuh */
+}
+
+/* Tombol kirim */
+button {
+    background-color: #2D336B;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

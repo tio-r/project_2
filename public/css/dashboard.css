@@ -1,0 +1,295 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #2D336B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    color: white;
+}
+
+.navbar-top .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-top .logo h2 h4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-top .logo img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.navbar-top .icons i {
+    margin-left: 20px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* Navbar bawah */
+.navbar-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #2D336B;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+}
+
+.navbar-bottom .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.navbar-bottom .nav-item.active {
+    background-color: #4455aa;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.navbar-bottom .nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.content-container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    flex: 1;
+}
+
+.schedule-bg {
+    background-color: #2D336B;
+    width: 100%; 
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.schedule-section {
+    background-color: #fff;
+    padding: 15px;
+    width: 1300px;
+    margin: 0 auto; /* Tengah */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#btn-lihat-jadwal {
+    background-color: #2D336B;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#btn-lihat-jadwal i {
+    margin-right: 4px;
+}
+
+.btn{
+    color: white;
+    text-decoration: none;
+}
+
+/* Teks tanggal */
+.schedule-date {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Pesan tidak ada jadwal */
+.no-schedule {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Main menu */
+.main-menu {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.main-menu h3 {
+    margin-bottom: 10px;
+}
+
+.menu-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 10px;
+    background-color: #223366;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.menu-item i {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.menu-item:hover {
+    background-color: #4455aa;
+}
+
+.feature-box {
+    display: flex;
+    align-items: center;
+    background:linear-gradient(to bottom, #2D336B, #14c723);
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    max-width: 500px;
+    height: auto;
+    background-color: inherit;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.feature-box img {
+    width: 200px; 
+    height: 200px;
+    object-fit: contain;
+    margin-left: 45px;
+}
+
+.feature-box .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    justify-content: flex-start; 
+    width: 100%; 
+    margin-right: 20px;
+}
+
+.feature-box h2 {
+    margin: 0;
+    font-size: 50px;
+    margin-bottom: 2px;
+}
+
+.feature-box h4 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Hover efek untuk JKO */
+.feature-box.jko:hover {
+    background: linear-gradient(to bottom, #4B0082, #14a3c7); /* warna berubah saat hover */
+    transform: scale(1.05); /* sedikit membesar */
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Hover efek untuk Voucher */
+.feature-box.voucher:hover {
+    background: linear-gradient(to bottom, #4B0082, #FF69B4); /* warna berbeda saat hover */
+    transform: scale(1.05); /* sedikit membesar */
+    transition: background 0.3s, transform 0.3s;
+}
+
+.articles-section {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+.articles-section h3 {
+    margin-bottom: 10px;
+}
+
+.articles-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.article-card {
+    flex: 0 0 auto;
+    width: 250px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.article-card:hover {
+    transform: scale(1.02);
+}
+
+.article-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.article-card h4 {
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+}
