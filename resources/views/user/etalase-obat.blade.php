@@ -19,7 +19,11 @@
     <i class="fa-solid fa-arrow-left" id="backIcon" style="cursor:pointer;" onclick="window.location='/dashboard'"></i>
     <h1>Etalase Obat</h1>
     <div class="ikonKanan">
+<<<<<<< HEAD
     <i class="fa-solid fa-cart-plus" onclick="window.location='/keranjang'"></i>
+=======
+        <i class="fa-solid fa-cart-plus" onclick="window.location='/keranjang'"></i>
+>>>>>>> ee22db424abe16bf2ed3031c97ccdfb603f96a41
     <i class="fas fa-home" style="cursor:pointer;" onclick="window.location='/dashboard'"></i>
     </div>
 </div>

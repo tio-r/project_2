@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Login;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Login
+class User extends Authenticatable
 {
-    protected $table = 'user'; // sesuai nama tabel
+    protected $table = 'users';
+    protected $primaryKey = 'id_user';   // FIX PENTING!
+    public $timestamps = false;
 
-    public $timestamps = false; // karena tabel tidak pakai created_at/updated_at
-
-    protected $primaryKey = 'id_user';
-
-    protected $fillable = ['id_user', 'nama', 'email', 'password', 'nomor_hp', 'tanggal_daftar'];
+    protected $fillable = [
+        'nama',
+        'email',
+        'nomor_hp',
+        'tanggal_daftar'
+    ];
 }

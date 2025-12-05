@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data User - Admin</title>
+  <title>Data Transaksi - Admin</title>
   <link rel="shortcut icon" type="image/png" href=".images/logos/logo.png" />
   <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,15 +47,16 @@
               <span class="hide-menu">Data</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between" href="/user-admin" aria-expanded="false" onclick="return false;">
+              <a class="sidebar-link justify-content-between" href="/user-admin" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
                     <iconify-icon icon="solar:user-line-duotone"></iconify-icon>
                   <span class="hide-menu">User</span>
                 </div>
               </a>
             </li>
+              
             <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between" href="/transaksi-admin" aria-expanded="false">
+              <a class="sidebar-link justify-content-between" href="/transaksi-admin" aria-expanded="false" onclick="return false;">
                 <div class="d-flex align-items-center gap-3">
                     <iconify-icon icon="solar:hand-money-line-duotone"></iconify-icon>
                   <span class="hide-menu">Transaksi</span>
@@ -82,7 +83,7 @@
                 </div>
               </a>
             </li>
-
+              
           </ul>
         </nav>
         <!-- End Sidebar navigation -->
@@ -123,12 +124,12 @@
               <li class="nav-item dropdown">
                 <a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="{{ asset('img/profile/user-1.jpg')}}" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="{{ asset('img/profile/t-1.jpg')}}" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
                     <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-user fs-6"></i>
+                      <i class="ti ti-t fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
                     </a>
                     <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
@@ -150,27 +151,31 @@
       <!--  Header End -->
         <div class="container-fluid">
           <div class="container mt-5" style="width: 90%; margin-right:500px;">
-            <h2 class="text-center mb-4" style="color:#225f9c;">Daftar User</h2>
-          
-            <div class="card shadow p-4 rounded-3">
-              <table id="userTable" class="table table-striped table-bordered align-middle">
+            <h2 class="text-center mb-4" style="color:#225f9c;">Daftar Transaksi</h2>
+
+          <div class="card shadow p-4 rounded-3">
+              <table id="tTable" class="table table-striped table-bordered align-middle">
                 <thead>
                   <tr>
-                    <th style="background-color: #225f9c;color: #fff;">ID User</th>
+                    <th style="background-color: #225f9c;color: #fff;">ID Transaksi</th>
+                    <th style="background-color: #225f9c;color: #fff;">Id t</th>
                     <th style="background-color: #225f9c;color: #fff;">Nama</th>
-                    <th style="background-color: #225f9c;color: #fff;">Email</th>
-                    <th style="background-color: #225f9c;color: #fff;">Nomor HP</th>
-                    <th style="background-color: #225f9c;color: #fff;">Tanggal Daftar</th>
+                    <th style="background-color: #225f9c;color: #fff;">Total harga</th>
+                    <th style="background-color: #225f9c;color: #fff;">Metode Pembayaran</th>
+                    <th style="background-color: #225f9c;color: #fff;">Status Transaksi</th>
+                    <th style="background-color: #225f9c;color: #fff;">tanggal Transaksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($users as $user)
+                  @foreach ($t as $transaksi)
                     <tr>
-                      <td>{{ $user->id_user }}</td>
-                      <td>{{ $user->nama }}</td>
-                      <td>{{ $user->email }}</td>
-                      <td>{{ $user->nomor_hp }}</td>
-                      <td>{{ $user->tanggal_daftar }}</td>
+                      <td>{{ $transaksi->id_transaksi }}</td>
+                      <td>{{ $transaksi->id_user }}</td>
+                      <td>{{ $transaksi->nama }}</td>
+                      <td>{{ $transaksi->total_harga }}</td>
+                      <td>{{ $transaksi->metode_pembayaran }}</td>
+                      <td>{{ $transaksi->status_transaksi }}</td>
+                      <td>{{ $transaksi->tanggal_transaksi }}</td>
                     </tr>
                   @endforeach
                 </tbody>
@@ -202,7 +207,7 @@
   $(document).ready(function() {
     console.log("Inisialisasi DataTables...");
 
-    $('#userTable').DataTable({
+    $('#tTable').DataTable({
       pageLength: 5,
       lengthMenu: [5, 10, 25, 50],
       language: {
