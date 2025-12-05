@@ -52,192 +52,32 @@
                 </div>
               </a>
             </li>
-              
             <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
+              <a class="sidebar-link justify-content-between" href="/transaksi-admin" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:home-angle-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Front Pages</span>
+                    <iconify-icon icon="solar:hand-money-line-duotone"></iconify-icon>
+                  <span class="hide-menu">Transaksi</span>
                 </div>
               </a>
             </li>
-
-            <li>
-              <span class="sidebar-divider lg"></span>
+            <li class="sidebar-item">
+              <a class="sidebar-link justify-content-between" href="/riwayat-admin" aria-expanded="false">
+                <div class="d-flex align-items-center gap-3">
+                    <iconify-icon icon="solar:history-2-line-duotone"></iconify-icon>
+                  <span class="hide-menu">Riwayat</span>
+                </div>
+              </a>
             </li>
             <li class="nav-small-cap">
               <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">UI</span>
+              <span class="hide-menu">kelola</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
-                <iconify-icon icon="solar:layers-minimalistic-bold-duotone"></iconify-icon>
-                <span class="hide-menu">Buttons</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
-                <iconify-icon icon="solar:danger-circle-line-duotone"></iconify-icon>
-                <span class="hide-menu">Alerts</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
-                <iconify-icon icon="solar:bookmark-square-minimalistic-line-duotone"></iconify-icon>
-                <span class="hide-menu">Card</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                <iconify-icon icon="solar:file-text-line-duotone"></iconify-icon>
-                <span class="hide-menu">Forms</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                <iconify-icon icon="solar:text-field-focus-line-duotone"></iconify-icon>
-                <span class="hide-menu">Typography</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
+              <a class="sidebar-link justify-content-between" href="/transaksi-admin" aria-expanded="false" onclick="return false;">
                 <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:cardholder-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Ui Elements</span>
+                    <iconify-icon icon="solar:cat-line-duotone"></iconify-icon>
+                  <span class="hide-menu">Kategori</span>
                 </div>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:star-fall-minimalistic-2-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Components</span>
-                </div>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:bookmark-square-minimalistic-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Cards</span>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <span class="sidebar-divider lg"></span>
-            </li>
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">Apps</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:cart-3-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Ecommerce</span>
-                </div>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:widget-4-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Blog</span>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <span class="sidebar-divider lg"></span>
-            </li>
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">Pages</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:cardholder-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Widgets</span>
-                </div>
-              </a>
-            </li>
-
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:cloud-file-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Pages</span>
-                </div>
-              </a>
-            </li>
-
-
-            <li>
-              <span class="sidebar-divider lg"></span>
-            </li>
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">Auth</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
-                <iconify-icon icon="solar:login-3-line-duotone"></iconify-icon>
-                <span class="hide-menu">Login</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-                <iconify-icon icon="solar:user-plus-rounded-line-duotone"></iconify-icon>
-                <span class="hide-menu">Register</span>
-              </a>
-            </li>
-
-            <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:shield-user-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Auth Pages</span>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <span class="sidebar-divider lg"></span>
-            </li>
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">Extra</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
-                <iconify-icon icon="solar:sticker-smile-circle-2-line-duotone"></iconify-icon>
-                <span class="hide-menu">Tabler Icon</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
-                <iconify-icon icon="solar:planet-3-line-duotone"></iconify-icon>
-                <span class="hide-menu">Sample Page</span>
               </a>
             </li>
           </ul>

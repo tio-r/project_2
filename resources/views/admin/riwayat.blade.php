@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data User - Admin</title>
+  <title>Data Transaksi - Admin</title>
   <link rel="shortcut icon" type="image/png" href=".images/logos/logo.png" />
   <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,13 +47,14 @@
               <span class="hide-menu">Data</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between" href="/user-admin" aria-expanded="false" onclick="return false;">
+              <a class="sidebar-link justify-content-between" href="/user-admin" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
                     <iconify-icon icon="solar:user-line-duotone"></iconify-icon>
                   <span class="hide-menu">User</span>
                 </div>
               </a>
             </li>
+              
             <li class="sidebar-item">
               <a class="sidebar-link justify-content-between" href="/transaksi-admin" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
@@ -82,7 +83,8 @@
                 </div>
               </a>
             </li>
-
+              
+        
           </ul>
         </nav>
         <!-- End Sidebar navigation -->
@@ -123,12 +125,12 @@
               <li class="nav-item dropdown">
                 <a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="{{ asset('img/profile/user-1.jpg')}}" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="{{ asset('img/profile/t-1.jpg')}}" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
                     <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-user fs-6"></i>
+                      <i class="ti ti-t fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
                     </a>
                     <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
@@ -150,32 +152,44 @@
       <!--  Header End -->
         <div class="container-fluid">
           <div class="container mt-5" style="width: 90%; margin-right:500px;">
-            <h2 class="text-center mb-4" style="color:#225f9c;">Daftar User</h2>
-          
-            <div class="card shadow p-4 rounded-3">
-              <table id="userTable" class="table table-striped table-bordered align-middle">
-                <thead>
-                  <tr>
-                    <th style="background-color: #225f9c;color: #fff;">ID User</th>
-                    <th style="background-color: #225f9c;color: #fff;">Nama</th>
-                    <th style="background-color: #225f9c;color: #fff;">Email</th>
-                    <th style="background-color: #225f9c;color: #fff;">Nomor HP</th>
-                    <th style="background-color: #225f9c;color: #fff;">Tanggal Daftar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($users as $user)
-                    <tr>
-                      <td>{{ $user->id_user }}</td>
-                      <td>{{ $user->nama }}</td>
-                      <td>{{ $user->email }}</td>
-                      <td>{{ $user->nomor_hp }}</td>
-                      <td>{{ $user->tanggal_daftar }}</td>
-                    </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
+            <h2 class="text-center mb-4" style="color:#225f9c;">Daftar Riwayat</h2>
+
+    <div class="card p-4 shadow rounded-3">
+        <table id="riwayatTable" class="table table-striped table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>ID Riwayat</th>
+                    <th>ID Transaksi</th>
+                    <th>Status Pengiriman</th>
+                    <th>No Resi</th>
+                    <th>Alamat Pengiriman</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($riwayat as $r)
+                <tr>
+                    <td>{{ $r->id_riwayat }}</td>
+                    <td>{{ $r->id_transaksi }}</td>
+                    <td>{{ $r->status_pengiriman }}</td>
+                    <td>{{ $r->no_resi ?? '-' }}</td>
+                    <td>{{ $r->alamat_pengiriman }}</td>
+
+                    <td>
+                        <form action="{{ route('riwayat.destroy', $r->id_riwayat) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus riwayat ini?')">
+                                Hapus
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
           </div>          
     </div>
 
@@ -199,25 +213,20 @@
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
 <script>
-  $(document).ready(function() {
-    console.log("Inisialisasi DataTables...");
-
-    $('#userTable').DataTable({
-      pageLength: 5,
-      lengthMenu: [5, 10, 25, 50],
-      language: {
-        search: "Cari:",
-        lengthMenu: "Tampilkan _MENU_ data per halaman",
-        info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
-        paginate: {
-          first: "Awal",
-          last: "Akhir",
-          next: "›",
-          previous: "‹"
+$(document).ready(function() {
+    $('#riwayatTable').DataTable({
+        pageLength: 5,
+        language: {
+            search: "Cari:",
+            lengthMenu: "Tampilkan _MENU_ data per halaman",
+            info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+            paginate: {
+                next: "›",
+                previous: "‹"
+            }
         }
-      }
     });
-  });
+});
 </script>
 </body>
 
